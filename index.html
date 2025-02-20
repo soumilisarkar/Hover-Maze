@@ -76,18 +76,19 @@
         .path:hover {
             background-color: lightblue;
         }
-        .end:hover::after{
-            content: 'You Win!';
+        .win{
+            display: none;
             position: absolute;
-            font-size: 35px;
-            font-weight: bolder;
+            left: 46%;
+            align-self: center;
             text-align: center;
-            top: 20px;
-            left: 45%;
-            color: rgb(254, 3, 3);
-            background-color: rgb(4, 4, 4);
+            font-size: 30px;
+            color: red;
+            font-weight: bolder;
         }
-
+        .end:hover + .win{
+            display: block;
+        }
         @media (max-width: 480px) {
         .maze{
             grid-template-columns: repeat(5, 60px);
@@ -105,6 +106,9 @@
             .start-over:hover::after{
                 font-size: 15px;
                 text-align: center;
+            }
+            .win{
+                left: 35%;
             }
         }
     </style>
@@ -138,7 +142,8 @@
         <div class="cell path"></div>
         <div class="cell wall"></div>
         <div class="cell wall"></div>
-        <div class="cell end">E</div>
+        <div class="cell end">E</div>    
+        <div class="win">You Win!</div>
     </div>
 </body>
 </html>
